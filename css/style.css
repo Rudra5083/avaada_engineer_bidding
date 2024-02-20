@@ -2262,5 +2262,7 @@ tbody tr:nth-child(odd) {
 
   margin-bottom: 20px;
 }
-
+.detail a {
+  text-decoration: none !important;
+}
 /* RFQ Detail code end */
