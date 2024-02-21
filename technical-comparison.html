@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaada</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom CSS to remove left and right borders for each cell */
+      .custom-borders td {
+        border-left: none;
+        border-right: none;
+      }
+      .custom-borders td.border-top {
+        border-top: 1px solid #dee2e6; /* Bootstrap's default border color */
+      }
+      .custom-borders td.border-bottom {
+        border-bottom: 1px solid #dee2e6; /* Bootstrap's default border color */
+      }
+      .table h2 {
+        margin: 0 !important;
+      }
+
+      .table tr p {
+        margin-bottom: 0 !important;
+      }
+
+      .header_lineitem{ display: flex;
+    justify-content: center;
+    margin-bottom: 30px;}
+
+      .header-tb{color: #000;
+    font-size: 16px;
+    padding: 7px 18px;
+    border-radius: 25px;
+
+    background: #D9D9D9;}
+
+
+    .line-tb{color: #fff;
+    font-size: 16px;
+    background: #44AAFB;
+    padding: 7px 18px;
+    border-radius: 25px;
+    left: -15px;
+    position: relative;
+}
+
+.tble-sty .btn-outline-success{padding: 2px 11px;}
+
+.tble-sty .btn-outline-danger{padding: 2px 11px;}
+
+
+.bor-tp{ border-top: #dee2e6 solid 1px !important;}
+
+
+
+
+      /* new code */
+
+      .listing_projectss{ display: flex; margin: 20px 0 20px 0;}
+
+      .extend_evaluation{ display: flex; margin-left: auto; gap: 1rem; align-items: center;}
+
+
+      
+.jobw_well{ background: #6D6D6D;
+  border-radius: 15px;
+  border-top-right-radius: 0;
+  color: #fff;
+  padding: 7px 10px;
+  width: 210px;
+  box-sizing: border-box;
+  margin: 19px;
+  margin-left: auto;
+  text-align: center;}
+
+  .time-am{ color: #6D6D6D;
+    font-size: 11px;
+    width: 66px;
+    margin-left: auto;
+    margin-top: -13px;
+}
+
+  .icon_type{ display: flex; margin: 0 0 9px 10px;}
+
+  .typehere-bx{ color: #000; font-size: 15px; line-height: 20px; margin-left: 10px;}
+
+  .bot_just{color: #6D6D6D;
+    font-size: 12px;
+    margin-left: 3.2rem;}
+
+
+  
+
+    .comments_main{ margin: 24px 0; }
+
+.comments_main h3{color: #444444; margin-left: 7.5rem ;
+  font-size: 16px; margin-bottom: 10px;}
+
+.comments_main_in{ display: flex; justify-content: center;}
+
+.comments_in{ border: #CBCBCB solid 1px; border-radius: 4px; width: 322px; margin-right: 15px;}
+.comments_in:last-child{ margin-right:0;}
+
+
+.type_reply {
+  color: #9f9494;
+  display: flex;
+  padding: 14px 16px;
+  margin-top: 14px;
+  font-size: 14px;
+  border-top: #e4e3e3 solid 1px;
+}
+
+.type_reply input {
+  outline: none !important;
+  border: none;
+  width: 280px;
+}
+    </style>
+    
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2">
+            <a href="listingproject.html"
+              ><img src="images/logo.png" alt="" height="51"
+            /></a>
+          </div>
+
+          <div class="col-md-5 ms-auto invites_log1">
+            <div class="invites">
+              <a href="invite.html"
+                ><span></span>
+                <svg
+                  width="19"
+                  height="18"
+                  viewBox="0 0 19 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.2937 7.32302H17.5617C17.7015 7.32302 17.8355 7.37855 17.9344 7.47738C18.0332 7.57621 18.0887 7.71025 18.0887 7.85002V17.299C18.0887 17.4388 18.0332 17.5728 17.9344 17.6717C17.8355 17.7705 17.7015 17.826 17.5617 17.826H10.2937C10.1539 17.826 10.0199 17.7705 9.92107 17.6717C9.82224 17.5728 9.76672 17.4388 9.76672 17.299V7.85002C9.76672 7.71025 9.82224 7.57621 9.92107 7.47738C10.0199 7.37855 10.1539 7.32302 10.2937 7.32302ZM10.8207 5.08702H17.0347V1.05302H10.8207V5.08602V5.08702ZM17.5617 6.13902H10.2937C10.1539 6.13902 10.0199 6.0835 9.92107 5.98467C9.82224 5.88584 9.76672 5.75179 9.76672 5.61202V0.526023C9.76672 0.386254 9.82224 0.25221 9.92107 0.153378C10.0199 0.0545463 10.1539 -0.000976562 10.2937 -0.000976562H17.5617C17.7015 -0.000976562 17.8355 0.0545463 17.9344 0.153378C18.0332 0.25221 18.0887 0.386254 18.0887 0.526023V5.61402C18.0887 5.75379 18.0332 5.88784 17.9344 5.98667C17.8355 6.0855 17.7015 6.14102 17.5617 6.14102V6.13902ZM1.31572 16.772H7.52972V12.739H1.31572V16.772ZM8.05672 17.826H0.788719C0.64895 17.826 0.514905 17.7705 0.416073 17.6717C0.317242 17.5728 0.261719 17.4388 0.261719 17.299V12.211C0.261719 12.0713 0.317242 11.9372 0.416073 11.8384C0.514905 11.7395 0.64895 11.684 0.788719 11.684H8.05672C8.19649 11.684 8.33053 11.7395 8.42936 11.8384C8.5282 11.9372 8.58372 12.0713 8.58372 12.211V17.299C8.58372 17.4388 8.5282 17.5728 8.42936 17.6717C8.33053 17.7705 8.19649 17.826 8.05672 17.826ZM0.788719 -0.000976562H8.05672C8.19649 -0.000976562 8.33053 0.0545463 8.42936 0.153378C8.5282 0.25221 8.58372 0.386254 8.58372 0.526023V9.97502C8.58372 10.1148 8.5282 10.2488 8.42936 10.3477C8.33053 10.4465 8.19649 10.502 8.05672 10.502H0.788719C0.64895 10.502 0.514905 10.4465 0.416073 10.3477C0.317242 10.2488 0.261719 10.1148 0.261719 9.97502V0.526023C0.261719 0.386254 0.317242 0.25221 0.416073 0.153378C0.514905 0.0545463 0.64895 -0.000976562 0.788719 -0.000976562ZM7.52972 1.05302H1.31572V9.44702H7.52972V1.05302ZM17.0297 8.37702H10.8207V16.771H17.0347L17.0297 8.37702Z"
+                    fill="#274594"
+                  />
+                </svg>
+                Dashboard
+              </a>
+              <a href="invite.html"
+                ><span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-envelope"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                    ></path></svg
+                ></span>
+                Invites
+              </a>
+            </div>
+
+            <div class="notification">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-bell-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+
+                <div class="circle">3</div>
+              </a>
+
+              <div class="dropdown">
+                <div class="notifications dropdown-menu">
+                  <div class="notifications_heading justify-content-between">
+                    Notifications
+
+                    <span>2 New</span>
+                  </div>
+
+                  <div class="notifications_inside">
+                    <ul>
+                      <li>
+                        <a href="#"
+                          >New vendor details submitted: Vendor Code VND205</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 30 Min Ago
+                        </div>
+                      </li>
+
+                      <li>
+                        <a href="#"
+                          >Vendor details received: Vendor Code VND203, Name -
+                          MechCorp Engineering.</a
+                        >
+                        <div class="time_outer">
+                          <img src="images/time.png" alt="" /> 47 Min Ago
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="user_box">
+              <img src="images/userkumar.png" alt="" />
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Rahul Verma
+              </a>
+
+              <div class="dropdown">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profile </a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 left_menu">
+            <ul>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="Projectlistingbuyerbidding.html">Projects</a></li>
+              <li><a href="#">Vendor</a></li>
+              <li><a href="Rfqlisting.html">RFQ</a></li>
+              <li><a href="#">Report</a></li>
+              <li><a href="Packagebuyerbidding.html">Packages</a></li>
+              <li><a href="#">Logout</a></li>
+              <!-- <li><a href="#">Accounts</a></li> -->
+            </ul>
+          </div>
+
+          <div class="col-md-10">
+            <div class="listing_projectss">
+              <p class="listing_rfq">
+                Technical Comparison
+                <strong style="color: #127dcf; font-weight: 500"
+                  >- Bidding Roud 1</strong
+                >
+              </p>
+              <div class="extend_evaluation">
+                <button
+                  
+                  class="vendor_btn vendor_maine_content1"
+                  href="#"
+                >
+                Extend Validity
+                </button>
+                <button
+                  
+                  class="vendor_btn vendor_maine_content1"
+                  href="#"
+                >
+                Finalize Evaluation
+                </button>
+                
+              </div>
+            </div>
+
+
+            <div class="header_lineitem">
+
+            <span class="header-tb">Header</span><span class="line-tb">Line Items</span>
+            </div>
+
+            
+            <table
+    class="table table-bordered tble-sty"
+    style="width: 80%; margin: auto"
+  >
+    <thead>
+      <tr style="border-top: none;"> 
+        <th  style="text-align: center; border: none; border-top: none;">BOQ</th>
+        <th  style="text-align: center; border: none; border-top: none;">QTY</th>
+        <th class="bor-tp">
+          <div >
+              <div style="display: flex;align-items: center;
+              justify-content: space-between;">
+            <p style="font-size:18px;">Vendor A</p>
+            <img src="images/GroupVendor.png">
+          </div
+          <p style="color:#7E7E7E; font-size:12px;font-weight:400;">24-1-2024 | 12:45 AM</p>
+            
+          </div>
+        </th>
+        <th class="bor-tp">
+          <div>
+              <div style="display: flex;align-items: center;
+              justify-content: space-between;">
+            <p><b>Vendor B</b></p>
+            <img src="images/Vendor2.png">
+            </div>
+            <p style="color:#7E7E7E; font-size:12px;font-weight:400;">24-1-2024 | 12:45 AM</p>
+          </div>
+        </th>
+        <th class="bor-tp">
+          <div>
+              <div style="display: flex;align-items: center;
+              justify-content: space-between;">
+            <p><b>Vendor C</b></p>
+            <img src="images/Vendor3.png">
+              </div>
+              <p style="color:#7E7E7E; font-size:12px;font-weight:400;">24-1-2024 | 12:45 AM</p>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td style="display: flex;gap:1rem;">
+              <img src="images/blue-arrow.png" width="20px" height="20px">
+              <p><b>Laptop</b></p>
+          </td>
+        <td>12</td>
+        <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+      </tr>
+     
+     
+        <tr>
+          <td style="display: flex;gap:1rem;">
+            <img src="images/blue-arrow.png" width="20px" height="20px">
+            <p><b>Chairs</b></p>
+        </td>
+          <td>8</td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+        </tr>
+        <tr>
+          <td style="display: flex;gap:1rem;">
+            <img src="images/blue-arrow.png" width="20px" height="20px">
+            <p><b>Computer</b></p>
+        </td>
+          <td>4</td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+        </tr>
+        <tr>
+          <td style="display: flex;gap:1rem;">
+            <img src="images/blue-arrow.png" width="20px" height="20px">
+            <p><b>Hardisk Accessories</b></p>
+        </td>
+          <td>2</td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+        </tr>
+        <tr>
+          <td style="display: flex;gap:1rem;">
+            <img src="images/blue-arrow.png" width="20px" height="20px">
+            <p><b>Laptop Charger</b></p>
+        </td>
+          <td>12</td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+        </tr>
+        <tr>
+          <td style="display: flex;gap:1rem;">
+            <img src="images/blue-arrow.png" width="20px" height="20px">
+            <p><b>Tables</b></p>
+        </td>
+          <td>8</td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+          <td><b>xxxx</b></td>
+        </tr>
+
+      <tr>
+        <td
+          style="
+            text-align: end;
+            border: none;
+            background-color: #f2f2f2;
+          "
+        >
+          <h2>Total</h2>
+        </td>
+        <td
+          style="
+            text-align: center;
+            border: none;
+            background-color: #f2f2f2;
+          "
+        >
+          <h2>46</h2>
+        </td>
+        <td
+          style="
+            text-align: center;
+            border: none;
+            background-color: #f2f2f2;
+          "
+        >
+          <h2>xxxx</h2>
+        </td>
+        <td
+          style="
+            text-align: center;
+            border: none;
+            background-color: #f2f2f2;
+          "
+        >
+          <h2>xxxx</h2>
+        </td>
+        <td
+          style="
+            text-align: center;
+            border: none;
+            background-color: #f2f2f2;
+          "
+        >
+          <h2>xxxx</h2>
+        </td>
+      </tr>
+      <tr class="custom-borders">
+        <td class="border-top border-bottom text-end">
+          <p style="color:#444444;font-size:14px;"><b>Tender Drawing</b></p>
+        </td>
+        <td></td>
+        <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+        <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+        <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+      </tr>
+      <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+            <p style="color:#444444;font-size:14px;"><b>Technical Specification</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"></p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+        </tr>
+      <tr class="custom-borders">
+        <td class="border-top border-bottom text-end">
+          <p></p>
+        </td>
+        <td>
+        <td class="border-top border-bottom"><p >
+          <button type="button" class="btn btn-outline-success">Approve</button>
+          <button type="button" class="btn btn-outline-danger">Reject</button></p></td>
+          <td class="border-top border-bottom"><p >
+            <button type="button" class="btn btn-outline-success">Approve</button>
+            <button type="button" class="btn btn-outline-danger">Reject</button></p></td>
+            <td class="border-top border-bottom"><p >
+              <button type="button" class="btn btn-outline-success">Approve</button>
+              <button type="button" class="btn btn-outline-danger">Reject</button></p></td>
+      </tr>
+      <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Payment Terms</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+        </tr>
+        <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Liquidated Damages</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">2%</p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">5%</p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">3%</p></td>
+        </tr>
+        <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Over all LD cap</b></p>
+          
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+        </tr>
+        <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Defect Liability Period</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">3 months</p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">2 months</p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">2.5 months</p></td>
+        </tr>
+
+
+
+        <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Service Contract Period</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">30 Days</p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">45 Days</p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">60 Days</p></td>
+        </tr>
+
+
+        <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Warrenty</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="color: #3AB54A; font-size: 14px;">Yes</p></td>
+          <td class="border-top border-bottom"><p style="color: red; font-size: 14px;">No</p></td>
+          <td class="border-top border-bottom"><p style="color: #3AB54A; font-size: 14px;">Yes</p></td>
+        </tr>
+        <tr class="custom-borders">
+          <td class="border-top border-bottom text-end">
+              <p style="color:#444444;font-size:14px;"><b>Capacity</b></p>
+          </td>
+          <td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+          <td class="border-top border-bottom"><p style="font-size: 14px; color:#444444;font-weight:400;">Attached  <img src="images/download.png"> </p></td>
+        </tr>
+  
+    </tbody>
+  </table>
+           
+
+
+  <div class="comments_main">
+<h3>Comments</h3>
+<div class="comments_main_in">
+
+<div class="comments_in">
+<div class="jobw_well">You did your job well!</div>
+<div class="time-am">9:25 AM</div>
+
+<div class="icon_type">
+  <img src="images/job-well.png" width="32px" height="32px"> <div class="typehere-bx">Please type here for any additional details from Vendors</div>
+
+
+</div>
+
+<div class="bot_just">Bot・Just now</div>
+
+<div class="type_reply justify-content-between">
+  <input type="text" placeholder="Type comments...">
+
+  <span>
+    <a href="#"> <img src="images/send_1.png" ></a></span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div class="comments_in">
+  <div class="jobw_well">You did your job well!</div>
+  <div class="time-am">9:25 AM</div>
+  
+  <div class="icon_type">
+    <img src="images/job-well.png" width="32px" height="32px"> <div class="typehere-bx">Please type here for any additional details from Vendors</div>
+  
+  
+  </div>
+  
+  <div class="bot_just">Bot・Just now</div>
+  
+  <div class="type_reply justify-content-between">
+    <input type="text" placeholder="Type comments...">
+  
+    <span>
+      <a href="#"> <img src="images/send_1.png" ></a></span>
+  </div>
+  
+  
+  
+  
+  
+  
+  </div>
+
+  <div class="comments_in">
+    <div class="jobw_well">You did your job well!</div>
+    <div class="time-am">9:25 AM</div>
+    
+    <div class="icon_type">
+      <img src="images/job-well.png" width="32px" height="32px"> <div class="typehere-bx">Please type here for any additional details from Vendors</div>
+    
+    
+    </div>
+    
+    <div class="bot_just">Bot・Just now</div>
+    
+    <div class="type_reply justify-content-between">
+      <input type="text" placeholder="Type comments...">
+    
+      <span>
+        <a href="#"> <img src="images/send_1.png" ></a></span>
+    </div>
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+
+  </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="top_remove">2024 Avaada Group . All Rights Reserved.</footer>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <!-- Your custom JavaScript -->
+    <script>
+      // Function to close the first modal
+      function closeApproveModal() {
+        $("#approvepublishModal").modal("hide");
+      }
+
+      // Function to open the second modal and close the first modal
+      function openCongratulationsModal() {
+        // Close the first modal
+        closeApproveModal();
+
+        // Open the second modal
+        $("#congratulationsModal").modal("show");
+      }
+
+      // Use the show.bs.modal event of the second modal to close the first modal
+      $("#congratulationsModal").on("show.bs.modal", function (e) {
+        closeApproveModal();
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // Ensure the document is ready before executing this script
+
+        // Function to open the modal
+        function openExtendValidityModal() {
+          $("#extendValidityModal").modal("show");
+        }
+
+        // Attach the function to the click event of the button
+        $(".vendor_btn").on("click", function (e) {
+          e.preventDefault();
+          openExtendValidityModal();
+        });
+
+        // Function to handle the "Extend" button click
+        function extendValidity() {
+          // Add your logic here to handle validity extension
+          // For example, you can make an AJAX call to your server to update validity
+          // Replace the alert with your actual logic
+          alert("Validity extended!");
+
+          // Close the modal after extending validity (optional)
+          $("#extendValidityModal").modal("hide");
+        }
+
+        // Attach the extendValidity function to the "Extend" button
+        $(".btn-primary").on("click", extendValidity);
+      });
+      function reloadPage() {
+        location.reload(true); // Passing true forces a reload from the server
+      }
+    </script>
+    <script>
+      function validateAndOpenModal() {
+        // Reset previous error messages
+        clearErrors();
+
+        // Validate REQ No.
+        var reqNumber = document.getElementById("reqNumber").value;
+        if (!reqNumber) {
+          displayError("reqNumberError", "Please enter REQ No.");
+          return;
+        }
+
+        // Validate Current Validity
+        var currentValidity = document.getElementById("currentValidity").value;
+        if (!currentValidity) {
+          displayError("currentValidityError", "Please enter Current Validity");
+          return;
+        }
+
+        // Validate Current Contact Name
+        var currentContactName =
+          document.getElementById("currentContactName").value;
+        if (!currentContactName) {
+          displayError(
+            "currentContactNameError",
+            "Please enter Current Contact Name"
+          );
+          return;
+        }
+
+        // Validate New Validity
+        var newValidity = document.getElementById("newValidity").value;
+        if (!newValidity) {
+          displayError("newValidityError", "Please enter New Validity");
+          return;
+        }
+
+        // If all validations pass, open the new modal
+        openNewModal();
+      }
+
+      function openNewModal() {
+        // Add your logic here to open the new modal
+        // For example, you can use Bootstrap's modal functions
+        // Replace the following line with your actual modal opening code
+        alert("New modal opened!");
+      }
+
+      function displayError(elementId, errorMessage) {
+        var errorElement = document.getElementById(elementId);
+        errorElement.innerHTML = errorMessage;
+        errorElement.style.display = "block";
+      }
+
+      function clearErrors() {
+        var errorElements = document.querySelectorAll(".error-message");
+        errorElements.forEach(function (element) {
+          element.innerHTML = "";
+          element.style.display = "none";
+        });
+      }
+    </script>
+    <script>
+      function validateAndOpenNewModal() {
+        // Reset previous error messages
+        clearErrors();
+
+        // Validate REQ No.
+        var reqNumber = document.getElementById("reqNumber").value;
+        if (!reqNumber) {
+          displayError("reqNumberError", "Please enter REQ No.");
+          return;
+        }
+
+        // Validate Current Validity
+        var currentValidity = document.getElementById("currentValidity").value;
+        if (!currentValidity) {
+          displayError("currentValidityError", "Please enter Current Validity");
+          return;
+        }
+
+        // Validate Current Contact Name
+        var currentContactName =
+          document.getElementById("currentContactName").value;
+        if (!currentContactName) {
+          displayError(
+            "currentContactNameError",
+            "Please enter Current Contact Name"
+          );
+          return;
+        }
+
+        // Validate New Validity
+        var newValidity = document.getElementById("newValidity").value;
+        if (!newValidity) {
+          displayError("newValidityError", "Please enter New Validity");
+          return;
+        }
+
+        // If all validations pass, open the new modal
+        $("#newModal").modal("show");
+      }
+
+      function displayError(elementId, errorMessage) {
+        var errorElement = document.getElementById(elementId);
+        errorElement.innerHTML = errorMessage;
+        errorElement.style.display = "block";
+      }
+
+      function clearErrors() {
+        var errorElements = document.querySelectorAll(".error-message");
+        errorElements.forEach(function (element) {
+          element.innerHTML = "";
+          element.style.display = "none";
+        });
+      }
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Hide the first modal when the second modal is shown
+        $("#newModal").on("show.bs.modal", function () {
+          $("#extendValidityModal").modal("hide");
+        });
+      });
+
+      function validateAndOpenNewModal() {
+        // Your validation logic here
+
+        // If validation is successful, show the new modal
+        $("#newModal").modal("show");
+      }
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Hide the first modal when the second modal is shown
+        $("#newModal").on("show.bs.modal", function () {
+          $("#extendValidityModal").modal("hide");
+        });
+      });
+
+      function validateAndOpenNewModal() {
+        // Your validation logic here
+
+        // If validation is successful, show the new modal
+        $("#newModal").modal("show");
+      }
+    </script>
+    <script>
+      function yesButton() {
+        // Open the success modal
+        var successModal = document.getElementById("successModal");
+        successModal.style.display = "block";
+
+        // You might also want to add code to close the modal when desired
+        // For example, if you have a close button within the modal:
+        // var closeButton = successModal.querySelector(".close");
+        // closeButton.addEventListener("click", function() {
+        //   successModal.style.display = "none";
+        // });
+
+        // You can customize this code based on your modal structure and requirements
+      }
+    </script>
+    <script>
+      function yesButton() {
+        // Open the newModalss modal
+        var newModalss = new bootstrap.Modal(
+          document.getElementById("newModalss")
+        );
+        newModalss.show();
+      }
+
+      function reloadPage() {
+        // Reload or do any other actions you want when the modal is closed
+        location.reload();
+      }
+
+      // Optionally, you can add a function to close the modal when the close button is clicked
+      document.addEventListener("DOMContentLoaded", function () {
+        var closeButton = document.querySelector("#newModalss .btn-close");
+        closeButton.addEventListener("click", function () {
+          var newModalss = new bootstrap.Modal(
+            document.getElementById("newModalss")
+          );
+          newModalss.hide();
+        });
+      });
+    </script>
+    <script>
+      function approveAndPublishs() {
+        // Add logic to perform the "Approve and Publish" action
+        console.log("Approve and Publish action performed");
+
+        // Close the modal using Bootstrap's built-in functionality
+        $("#approvepublishModals").modal("show");
+      }
+    </script>
+    <script>
+      function openApproveModal() {
+        // Show the modal using JavaScript
+        $("#approvepublishModal").modal("show");
+      }
+
+      function closeApproveModal() {
+        // Close the modal using JavaScript
+        $("#approvepublishModal").modal("hide");
+      }
+
+      function approveAndPublish() {
+        // Add logic to perform the "Approve and Publish" action
+        console.log("Approve and Publish action performed");
+
+        // Close the modal using JavaScript
+        closeApproveModal();
+      }
+    </script>
+    <script>
+      function openCongratulationsModal() {
+        // Open the congratulations modal
+        $("#congratulationsModal").modal("show");
+      }
+    </script>
+  </body>
+</html>
