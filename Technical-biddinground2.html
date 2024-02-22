@@ -353,6 +353,7 @@
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
+                    <h5>Finalize Evaluation</h5>
                     <button
                       type="button"
                       class="btn-close"
@@ -368,11 +369,11 @@
                       Do you want to finalize the Technical <br />
                       evaluation?.
                     </p>
-                    <h5>Approved : 5 Rejected : 3</h5>
+                    <div class="approved_block_rejected">
+                      <h5>Approved :5</h5>
+                      <h5>Rejected : 3</h5>
+                    </div>
                     <div class="yes_no_btn">
-                      <button type="button" class="btn btn-secondary">
-                        No
-                      </button>
                       <button
                         type="button"
                         class="btn btn-success"
@@ -381,6 +382,9 @@
                         onclick="validateFeedback()"
                       >
                         Yes
+                      </button>
+                      <button type="button" class="btn btn-secondary">
+                        No
                       </button>
                     </div>
                   </div>
@@ -774,13 +778,13 @@
                   </td>
                   <td></td>
                   <td class="border-top border-bottom">
-                    <p style="color: #3ab54a; font-size: 14px">Approve</p>
+                    <p style="color: #3ab54a; font-size: 14px">Approved</p>
                   </td>
                   <td class="border-top border-bottom">
-                    <p style="color: red; font-size: 14px">Reject</p>
+                    <p style="color: red; font-size: 14px">Rejected</p>
                   </td>
                   <td class="border-top border-bottom">
-                    <p style="color: #3ab54a; font-size: 14px">Approve</p>
+                    <p style="color: #3ab54a; font-size: 14px">Approved</p>
                   </td>
                 </tr>
                 <tr class="custom-borders">

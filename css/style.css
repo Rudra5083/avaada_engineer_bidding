@@ -635,7 +635,7 @@ a.view_submit:hover {
 }
 .bs-wizard > .bs-wizard-step:first-child > .progress {
   left: 50%;
-  width: 50%;
+  width: 60%;
 }
 .bs-wizard > .bs-wizard-step:last-child > .progress {
   width: 50%;
@@ -1899,7 +1899,7 @@ header {
 }
 .vendor_maine_content1 {
   background-color: #fff;
-  color: #9c9696;
+  color: #000;
   border: 1px solid #9c9696;
 }
 .btn_uloadfile {
@@ -1928,7 +1928,7 @@ header {
 }
 .maine_btn_bom_block {
   font-family: sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 13px;
   color: #5c5a5a;
 }
@@ -2290,7 +2290,7 @@ tbody tr:nth-child(odd) {
 }
 .bs-wizard > .bs-wizard-step:first-child > .progress {
   left: 50%;
-  width: 50%;
+  width: 60%;
 }
 .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {
   width: 100%;
@@ -2377,6 +2377,12 @@ tbody tr:nth-child(odd) {
   color: #000;
   font-weight: 400;
   margin-top: 1rem;
+}
+.approved_block_rejected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /* RFQ Detail code end */
