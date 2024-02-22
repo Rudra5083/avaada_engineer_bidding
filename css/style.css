@@ -54,6 +54,7 @@ footer {
 
 .top_remove {
   margin-top: 0px;
+  background-color: #f9f1f1;
 }
 
 .space {
@@ -1466,6 +1467,7 @@ header {
 }
 .Newvendor_category {
   padding-bottom: 10px;
+  text-align: start;
 }
 .clear_btn_status {
   padding-top: 10px;
@@ -1896,8 +1898,9 @@ header {
   gap: 1rem;
 }
 .vendor_maine_content1 {
-  background-color: #f4f6f9;
-  color: #000;
+  background-color: #fff;
+  color: #9c9696;
+  border: 1px solid #9c9696;
 }
 .btn_uloadfile {
   background-color: #f6f5f5;
@@ -1925,8 +1928,8 @@ header {
 }
 .maine_btn_bom_block {
   font-family: sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 13px;
   color: #5c5a5a;
 }
 .closebtn_submit_block_btn {
@@ -2146,10 +2149,6 @@ header {
   width: 14%;
 }
 
-.list_con {
-  width: 21%;
-}
-
 .vnr_information {
   width: 17%;
 }
@@ -2246,7 +2245,7 @@ tbody tr:nth-child(odd) {
 .progress-bar-inner {
   height: 100%;
 
-  background-color: #4caf50 !important;
+  background-color: #218eca !important;
 
   width: 20%; /* Change this value to set the progress */
 
@@ -2265,4 +2264,119 @@ tbody tr:nth-child(odd) {
 .detail a {
   text-decoration: none !important;
 }
+.evaluation_block {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.block_evaluation {
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: center;
+}
+.approval_block {
+  height: 15rem;
+  margin: 2rem;
+}
+.bs-wizard {
+  padding: 0 0 10px 0;
+}
+.bs-wizard > .bs-wizard-step {
+  padding: 0;
+  position: relative;
+  width: 20%;
+}
+.bs-wizard > .bs-wizard-step:first-child > .progress {
+  left: 50%;
+  width: 50%;
+}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {
+  width: 100%;
+}
+.bs-wizard > .bs-wizard-step > .bs-wizard-rating {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #5c5a5a;
+  display: block;
+  background: #0162dd;
+  top: 45px;
+  text-decoration: none;
+  left: 50%;
+  font-weight: 700;
+  font-size: 19px;
+  text-align: center;
+  margin-top: -14px !important;
+  margin-left: -11px !important;
+  border-radius: 50%;
+  top: 40%;
+}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {
+  color: #5c5a5a;
+  font-size: 12px;
+  font-weight: 500;
+}
+.bs-wizard > .bs-wizard-step {
+  padding: 0;
+  position: relative;
+  width: 20%;
+}
+
+.bs-wizard > .bs-wizard-step > .progress {
+  position: relative;
+  border-radius: 0px;
+  height: 3px;
+  box-shadow: none;
+  margin: 20px 0;
+}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dots {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #5c5a5a;
+  display: block;
+  background: #e6e2e2;
+  top: 45px;
+  text-decoration: none;
+  left: 50%;
+  font-weight: 700;
+  font-size: 19px;
+  text-align: center;
+  margin-top: -14px;
+  margin-left: -15px;
+  border-radius: 50%;
+  top: 40%;
+}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {
+  color: #5c5a5a;
+  font-size: 12px;
+  font-weight: 500;
+}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {
+  width: 100%;
+}
+.trophy_listing {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.bidding_block_sky {
+  color: #7e7e7e;
+  font-size: 12px;
+  font-weight: 400;
+}
+.yes_no_btn {
+  padding-bottom: 1rem;
+  margin-top: 10px;
+}
+.finalize_block_listing {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #000;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
 /* RFQ Detail code end */

@@ -163,6 +163,12 @@
         width: 280px;
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
@@ -324,14 +330,140 @@
                   Award Vednor
                 </button>
                 <button class="vendor_btn vendor_maine_content1" href="#">
-                  Extend Vednor
+                  Extend Validity
                 </button>
-                <button class="vendor_btn vendor_maine_content1" href="#">
+                <button
+                  class="vendor_btn vendor_maine_content1"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
                   Finalize Evaluation
                 </button>
               </div>
             </div>
+            <!-- Approved and Rejected Modal -->
+            <div
+              class="modal fade hidemodal show"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      fdprocessedid="rw9p"
+                      onclick="reloadPage()"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Add your modal content here -->
+                    <p style="font-weight: 400; color: #000; font-size: 18px">
+                      Do you want to finalize the Technical <br />
+                      evaluation?.
+                    </p>
+                    <h5>Approved : 5 Rejected : 3</h5>
+                    <div class="yes_no_btn">
+                      <button type="button" class="btn btn-secondary">
+                        No
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        data-toggle="modal"
+                        data-target="#successModal"
+                        onclick="validateFeedback()"
+                      >
+                        Yes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <!-- Approved and Rejected click on yes button success modal -->
+            <div
+              class="modal fade"
+              id="successModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="successModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      fdprocessedid="rw9p"
+                      onclick="reloadPage()"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <h5><b>Finalize Technical Evaluation</b></h5>
+                    <p class="finalize_block_listing">
+                      Technical Evaluation for this RFQ has been processed
+                      successfully. Respective Vendors & Buyer will be notified
+                      accordingly.
+                    </p>
+                    <a
+                      href="Rfqlisting.html"
+                      type="button"
+                      class="btn clear_btn"
+                      fdprocessedid="msf5oi"
+                    >
+                      Close
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="search_filter_outers ms-auto">
+              <div class="search_main">
+                <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                    <input
+                      type="text"
+                      class="form-control input-lg"
+                      placeholder="Search here"
+                      fdprocessedid="8achb"
+                    />
+                    <span class="input-group-btn">
+                      <button
+                        class="btn btn-info btn-lg"
+                        type="button"
+                        fdprocessedid="trsp06"
+                      >
+                        <span class="glyphicon glyphicon-search"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-search"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                            ></path></svg
+                        ></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="header_lineitem">
               <span class="header-tb">Header</span
               ><span class="line-tb">Line Items</span>
@@ -354,43 +486,49 @@
                     QTY
                   </th>
                   <th class="bor-tp">
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                      "
-                    >
-                      <p style="font-size: 18px">Vendor A</p>
-                      <img src="images/Vendor_1.png" />
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+                        "
+                      >
+                        <p><b>Vendor A</b></p>
+                        <img src="images/Vendor_1.png" />
+                      </div>
+                      <p class="bidding_block_sky">24-1-2024 | 12:45 AM</p>
                     </div>
-                    <p class="bidding_block_sky">24-1-2024 | 12:45 AM</p>
                   </th>
                   <th class="bor-tp">
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                      "
-                    >
-                      <p><b>Vendor B</b></p>
-                      <img src="images/Vendor2.png" />
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+                        "
+                      >
+                        <p><b>Vendor B</b></p>
+                        <img src="images/Vendor2.png" />
+                      </div>
+                      <p class="bidding_block_sky">24-1-2024 | 12:45 AM</p>
                     </div>
-                    <p class="bidding_block_sky">24-1-2024 | 12:45 AM</p>
                   </th>
                   <th class="bor-tp">
-                    <div
-                      style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                      "
-                    >
-                      <p><b>Vendor C</b></p>
-                      <img src="images/Vendor3.png" />
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+                        "
+                      >
+                        <p><b>Vendor C</b></p>
+                        <img src="images/Vendor3.png" />
+                      </div>
+                      <p class="bidding_block_sky">24-1-2024 | 12:45 AM</p>
                     </div>
-                    <p class="bidding_block_sky">24-1-2024 | 12:45 AM</p>
                   </th>
                 </tr>
               </thead>
@@ -405,9 +543,53 @@
                     <p><b>Laptop</b></p>
                   </td>
                   <td>12</td>
-                  <td><b>xxxx</b></td>
-                  <td><b>xxxx</b></td>
-                  <td><b>xxxx</b></td>
+                  <td><b></b></td>
+                  <td><b></b></td>
+                  <td><b></b></td>
+                </tr>
+                <tr>
+                  <td style="display: flex; gap: 1rem">
+                    <p style="margin-left: 36px"><b>Price</b></p>
+                  </td>
+                  <td></td>
+                  <td style="background-color: #e8fafb">
+                    <p><b>₹ 300</b></p>
+                  </td>
+                  <td style="background-color: #fdecf0"><b>xxxx</b></td>
+                  <td style="background-color: #f5effc"><b>xxxx</b></td>
+                </tr>
+                <tr>
+                  <td style="display: flex; gap: 1rem">
+                    <p style="margin-left: 36px"><b>Amount</b></p>
+                  </td>
+                  <td></td>
+                  <td style="background-color: #e8fafb">
+                    <p><b>₹ 200</b></p>
+                  </td>
+                  <td style="background-color: #fdecf0"><b>xxxx</b></td>
+                  <td style="background-color: #f5effc"><b></b></td>
+                </tr>
+                <tr>
+                  <td style="display: flex; gap: 1rem">
+                    <p style="margin-left: 36px"><b>Ranking</b></p>
+                  </td>
+                  <td></td>
+                  <td style="background-color: #e8fafb">
+                    <div class="trophy_listing">
+                      <img src="images/trophy.png" alt="" />
+                      <p><b>1</b></p>
+                    </div>
+                  </td>
+                  <td style="background-color: #fdecf0">
+                    <div class="trophy_listing">
+                      <img src="images/trophy.png" alt="" /><b>2</b>
+                    </div>
+                  </td>
+                  <td style="background-color: #f5effc">
+                    <div class="trophy_listing">
+                      <img src="images/trophy.png" alt="" /><b>3</b>
+                    </div>
+                  </td>
                 </tr>
 
                 <tr>
@@ -498,7 +680,7 @@
                       background-color: #f2f2f2;
                     "
                   >
-                    <h2>46</h2>
+                    <h2>22</h2>
                   </td>
                   <td
                     style="
@@ -592,52 +774,13 @@
                   </td>
                   <td></td>
                   <td class="border-top border-bottom">
-                    <p>
-                      <button
-                        type="button"
-                        class="btn btn-outline-success"
-                        id="approveBtn"
-                        data-bs-toggle="modal"
-                        data-bs-target="#newModal"
-                      >
-                        Approve
-                      </button>
-                      <button type="button" class="btn btn-outline-danger">
-                        Reject
-                      </button>
-                    </p>
+                    <p style="color: #3ab54a; font-size: 14px">Approve</p>
                   </td>
                   <td class="border-top border-bottom">
-                    <p>
-                      <button
-                        type="button"
-                        class="btn btn-outline-success"
-                        id="approveBtn"
-                        data-bs-toggle="modal"
-                        data-bs-target="#newModal"
-                      >
-                        Approve
-                      </button>
-                      <button type="button" class="btn btn-outline-danger">
-                        Reject
-                      </button>
-                    </p>
+                    <p style="color: red; font-size: 14px">Reject</p>
                   </td>
                   <td class="border-top border-bottom">
-                    <p>
-                      <button
-                        type="button"
-                        class="btn btn-outline-success"
-                        id="approveBtn"
-                        data-bs-toggle="modal"
-                        data-bs-target="#newModal"
-                      >
-                        Approve
-                      </button>
-                      <button type="button" class="btn btn-outline-danger">
-                        Reject
-                      </button>
-                    </p>
+                    <p style="color: #3ab54a; font-size: 14px">Approve</p>
                   </td>
                 </tr>
                 <tr class="custom-borders">
@@ -835,221 +978,7 @@
                 </tr>
               </tbody>
             </table>
-            <!-- Approve Modal  -->
-            <div class="modal fade hidemodal show" id="newModal">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content approval_block">
-                  <div class="modal-header">
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                      fdprocessedid="rw9p"
-                      onclick="reloadPage()"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <p>
-                      This approval will pass the vendor from <br />technical
-                      Comparison
-                    </p>
-                    <p>Do you want to continue?</p>
-                    <div class="clear_btn_status">
-                      <button
-                        type="button"
-                        class="btn btn-success"
-                        onclick="openCongratulationsModal()"
-                        fdprocessedid="ufk3fi"
-                      >
-                        Yes
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        onclick="closeApproveModal()"
-                        fdprocessedid="t39hmd"
-                      >
-                        No
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Approval click on Yes Button Modal  -->
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-modal="true"
-              role="dialog"
-            >
-              <div
-                class="modal-dialog modal-dialog-scrollable modal-dialog-Centered"
-              >
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Vendor A Rating
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                      fdprocessedid="rw9p"
-                      onclick="reloadPage()"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div>
-                        <p style="text-align: start">
-                          Please rate your experience in each of the following
-                          areas:
-                        </p>
-                        <p
-                          style="
-                            margin-top: -10px;
-                            text-align: start;
-                            color: #a4a4a6;
-                            font-weight: 400;
-                            font-family: inter;
-                            font-size: 16px;
-                          "
-                        >
-                          Drag the slider to a point on the scale.
-                        </p>
-                      </div>
-                      <div
-                        class="vendor_status_main_rating justify-content-between ms-auto"
-                      >
-                        <div class="row bs-wizard">
-                          <div class="col-xs-2 bs-wizard-step complete">
-                            <div class="progress">
-                              <div class="progress-bar"></div>
-                            </div>
-                            <a href="#" class="bs-wizard-rating"> </a>
-                            <div class="bs-wizard-info text-center">1-Poor</div>
-                          </div>
-
-                          <div class="col-xs-2 bs-wizard-step disabled">
-                            <!-- active -->
-
-                            <div class="progress">
-                              <div class="progress-bar"></div>
-                            </div>
-                            <a href="#" class="bs-wizard-dots"></a>
-                            <div class="bs-wizard-info text-center">
-                              2-Below Average
-                            </div>
-                          </div>
-
-                          <div class="col-xs-2 bs-wizard-step disabled">
-                            <!-- active -->
-
-                            <div class="progress">
-                              <div class="progress-bar"></div>
-                            </div>
-                            <a href="#" class="bs-wizard-dots"></a>
-                            <div class="bs-wizard-info text-center">
-                              3-Average
-                            </div>
-                          </div>
-
-                          <div class="col-xs-2 bs-wizard-step disabled">
-                            <!-- active -->
-
-                            <div class="progress">
-                              <div class="progress-bar"></div>
-                            </div>
-                            <a href="#" class="bs-wizard-dots"></a>
-                            <div class="bs-wizard-info text-center">4-Good</div>
-                          </div>
-
-                          <div class="col-xs-2 bs-wizard-step disabled">
-                            <!-- active -->
-
-                            <div class="progress">
-                              <div class="progress-bar"></div>
-                            </div>
-                            <a href="#" class="bs-wizard-dots"></a>
-                            <div class="bs-wizard-info text-center">
-                              5-Excellent
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="Newvendor_category">
-                        <label class="mb-1 text-dark"
-                          >Feedback/Remarks
-                          <span class="required">*</span></label
-                        >
-                        <input
-                          type="text"
-                          id="feedbackInput"
-                          class="form-control form_h_modal"
-                          placeholder="Enter your feedback or remarks"
-                          required=""
-                          fdprocessedid="bztnki"
-                        />
-                        <div class="error-message" id="feedbackError"></div>
-                      </div>
-                      <div class="approve_button justify-content-end mt-3">
-                        <a
-                          href="#"
-                          class="btn btn-success"
-                          onclick="validateFeedback()"
-                          >Approve</a
-                        >
-                        <a href="#" class="btn btn-danger">Reject</a>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Success Modal in click on approval btn -->
-            <div
-              class="modal fade"
-              id="successModal"
-              tabindex="-1"
-              aria-labelledby="successModalLabel"
-              aria-modal="true"
-              role="dialog"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                      fdprocessedid="rw9p"
-                      onclick="reloadPage()"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <img src="images/check-circle.png" alt="" />
-                    <p>
-                      Vendor A has been approved successfully for<br />
-                      technical Evaluation.
-                    </p>
-                    <a
-                      href="Technical-biddinground2.html"
-                      class="btn btn-success"
-                      >Done</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="comments_main">
               <h3>Comments</h3>
               <div class="comments_main_in">
@@ -1060,7 +989,7 @@
                   <div class="icon_type">
                     <img src="images/job-well.png" width="32px" height="32px" />
                     <div class="typehere-bx">
-                      Please type here for any additional details from Vendors
+                      You can upload Business licenses
                     </div>
                   </div>
 
@@ -1082,7 +1011,7 @@
                   <div class="icon_type">
                     <img src="images/job-well.png" width="32px" height="32px" />
                     <div class="typehere-bx">
-                      Please type here for any additional details from Vendors
+                      You can upload Business licenses
                     </div>
                   </div>
 
@@ -1104,7 +1033,7 @@
                   <div class="icon_type">
                     <img src="images/job-well.png" width="32px" height="32px" />
                     <div class="typehere-bx">
-                      Please type here for any additional details from Vendors
+                      You can upload Business licenses
                     </div>
                   </div>
 
@@ -1129,6 +1058,9 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Your custom JavaScript -->
     <script>
@@ -1407,130 +1339,10 @@
         $("#congratulationsModal").modal("show");
       }
     </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="..."
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Your Custom JavaScript -->
     <script>
-      // Use JavaScript to open the new modal
-      document
-        .getElementById("approveBtn")
-        .addEventListener("click", function () {
-          var newModal = new bootstrap.Modal(
-            document.getElementById("newModal")
-          );
-          newModal.show();
-        });
-    </script>
-    <script>
-      function openCongratulationsModal() {
-        var congratulationsModal = new bootstrap.Modal(
-          document.getElementById("exampleModal")
-        );
-        congratulationsModal.show();
-      }
-
-      function validateFeedback() {
-        // Add your validation logic here
-        console.log("Feedback validation logic goes here");
-      }
-    </script>
-    <script>
-      // Function to hide the first modal
-      function hideFirstModal() {
-        var firstModal = new bootstrap.Modal(
-          document.getElementById("newModal")
-        );
-        firstModal.hide();
-      }
-
-      // Function to show the second modal
-      function showSecondModal() {
-        // Close the first modal before showing the second modal
-        hideFirstModal();
-
-        // Show the second modal
-        var secondModal = new bootstrap.Modal(
-          document.getElementById("exampleModal")
-        );
-        secondModal.show();
-      }
-
-      // Call showSecondModal function when needed, for example:
-      // You can call this function when the "Yes" button is clicked in the first modal
-      function openCongratulationsModal() {
-        showSecondModal();
-        // Additional logic for the "Yes" button click
-        // ...
-      }
-
-      // Your other functions go here...
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      function openCongratulationsModal() {
-        // Hide the first modal
-        document.getElementById("newModal").classList.remove("show");
-        document.getElementById("newModal").classList.add("hidemodal");
-
-        // Show the second modal
-        var congratulationsModal = new bootstrap.Modal(
-          document.getElementById("exampleModal")
-        );
-        congratulationsModal.show();
-      }
-
       function reloadPage() {
-        // Implement your reloadPage logic here
-      }
-
-      function closeApproveModal() {
-        // Implement your closeApproveModal logic here
-      }
-
-      function validateFeedback() {
-        // Implement your validateFeedback logic here
-      }
-      function reloadPage() {
-        // Reload the page
+        // Reload the current page
         location.reload();
-      }
-    </script>
-    <script>
-      function openCongratulationsModal() {
-        // Hide the first modal
-        document.getElementById("newModal").classList.remove("show");
-        document.getElementById("newModal").classList.add("hidemodal");
-
-        // Show the second modal
-        var congratulationsModal = new bootstrap.Modal(
-          document.getElementById("exampleModal")
-        );
-        congratulationsModal.show();
-      }
-
-      function reloadPage() {
-        // Reload the page
-        location.reload();
-      }
-
-      function closeApproveModal() {
-        // Implement your closeApproveModal logic here
-      }
-
-      function validateFeedback() {
-        // Hide the first modal
-        document.getElementById("newModal").classList.remove("show");
-        document.getElementById("newModal").classList.add("hidemodal");
-
-        // Show the success modal
-        var successModal = new bootstrap.Modal(
-          document.getElementById("successModal")
-        );
-        successModal.show();
       }
     </script>
     <script>
